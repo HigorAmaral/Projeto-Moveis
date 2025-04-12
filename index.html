@@ -26,11 +26,12 @@
                 <h3 class="mb-3">Sua Sacola</h3>
                 <ul class="list-group">
                     <li v-for="(item, index) in carrinho" :key="index" class="list-group-item d-flex justify-content-between align-items-center">
-                        {{ item.nome }} ({{ item.quantidade }})
+                        {{ item.nome }} ({{ item.quantidade }}) - R$ {{ (item.quantidade * item.preco).toFixed(2) }}
                         <button class="btn btn-danger btn-sm" @click="removerDoCarrinho(index)">Remover</button>
                     </li>
                 </ul>
                 <p v-if="carrinho.length === 0" class="text-muted mt-3">Sua sacola está vazia.</p>
+                <p v-if="carrinho.length > 0" class="mt-3 fw-bold">Total: R$ {{ totalCarrinho.toFixed(2) }}</p>
             </div>
         </div>
 
@@ -51,6 +52,7 @@
                             <div class="card-body">
                                 <h5 class="card-title">{{ produto.nome }}</h5>
                                 <p class="card-text">{{ produto.descricao }}</p>
+                                <p class="text-muted">Preço: R$ {{ produto.preco.toFixed(2) }}</p>
                                 <p class="text-muted">Estoque: {{ produto.estoque }} unidades</p>
                                 <button 
                                     class="btn btn-primary" 
@@ -66,7 +68,7 @@
             </div>
         </section>
 
-        <!-- footer -->
+        <!-- Footer -->
         <footer class="bg-dark text-white py-4">
             <div class="container text-center">
                 <p>&copy; 2025 Loja de Roupas. Todos os direitos reservados a Higor(3info1).</p>
@@ -83,7 +85,8 @@
                     produtos: [
                         { 
                             nome: 'Camiseta Slim', 
-                            descricao: 'camiseta slim Basica em algodão', 
+                            descricao: 'Camiseta slim básica em algodão.', 
+                            preco: 49.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p1-1.webp',
                             imagemHover: 'imagens/p1-2.webp',
@@ -91,7 +94,8 @@
                         },
                         { 
                             nome: 'Camiseta Regular', 
-                            descricao: 'Camiseta Regula em algodão com Manga.', 
+                            descricao: 'Camiseta regular em algodão com manga.', 
+                            preco: 59.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p2-1.webp',
                             imagemHover: 'imagens/p2-2.webp',
@@ -99,7 +103,8 @@
                         },
                         { 
                             nome: 'Camiseta Relaxed', 
-                            descricao: 'Camiseta Relaxed em algodão.', 
+                            descricao: 'Camiseta relaxed em algodão.', 
+                            preco: 69.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p3-1.webp',
                             imagemHover: 'imagens/p3-2.webp',
@@ -108,6 +113,7 @@
                         { 
                             nome: 'Camiseta Oversized', 
                             descricao: 'Camiseta oversized em malhão.', 
+                            preco: 79.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p4-1.webp',
                             imagemHover: 'imagens/p4-2.webp',
@@ -115,7 +121,8 @@
                         },
                         { 
                             nome: 'Camiseta Relaxed', 
-                            descricao: 'Camiseta Relaxed em algodão.', 
+                            descricao: 'Camiseta relaxed em algodão.', 
+                            preco: 69.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p5-1.webp',
                             imagemHover: 'imagens/p5-2.webp',
@@ -124,14 +131,16 @@
                         { 
                             nome: 'Camiseta Confort', 
                             descricao: 'Camiseta confort em algodão.', 
+                            preco: 59.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p6-1.webp',
                             imagemHover: 'imagens/p6-2.webp',
                             imagemAtual: 'imagens/p6-2.webp'
                         },
                         { 
-                            nome: 'Camiseta overboxy', 
-                            descricao: 'Camiseta overboxy em Malhão.', 
+                            nome: 'Camiseta Overboxy', 
+                            descricao: 'Camiseta overboxy em malhão.', 
+                            preco: 89.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p7-1.webp',
                             imagemHover: 'imagens/p7-2.webp',
@@ -140,6 +149,7 @@
                         { 
                             nome: 'Camiseta Relaxed', 
                             descricao: 'Camiseta relaxed em algodão.', 
+                            preco: 69.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p8-1.webp',
                             imagemHover: 'imagens/p8-2.webp',
@@ -148,6 +158,7 @@
                         { 
                             nome: 'Camiseta Confort', 
                             descricao: 'Camiseta confort com estampa.', 
+                            preco: 59.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p9-1.webp',
                             imagemHover: 'imagens/p9-2.webp',
@@ -156,30 +167,37 @@
                         { 
                             nome: 'Camiseta Confort', 
                             descricao: 'Camiseta confort com estampa.', 
+                            preco: 59.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p10-1.webp',
                             imagemHover: 'imagens/p10-2.webp',
                             imagemAtual: 'imagens/p10-2.webp'
                         },
-                        {
-                        nome: 'Camiseta Confort', 
+                        { 
+                            nome: 'Camiseta Confort', 
                             descricao: 'Camiseta confort com estampa.', 
+                            preco: 59.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p11-1.webp',
                             imagemHover: 'imagens/p11-2.webp',
                             imagemAtual: 'imagens/p11-2.webp'
                         },
-                        {
-                        nome: 'Camiseta Boxy',	 
-                            descricao: 'Camiseta Boxy em algodão.', 
+                        { 
+                            nome: 'Camiseta Boxy', 
+                            descricao: 'Camiseta boxy em algodão.', 
+                            preco: 79.90,
                             estoque: 10, 
                             imagemPadrao: 'imagens/p12-1.webp',
                             imagemHover: 'imagens/p12-2.webp',
                             imagemAtual: 'imagens/p12-2.webp'
                         }
                     ]
-
                 };
+            },
+            computed: {
+                totalCarrinho() {
+                    return this.carrinho.reduce((total, item) => total + (item.quantidade * item.preco), 0);
+                }
             },
             methods: {
                 adicionarAoCarrinho(index) {
@@ -190,7 +208,7 @@
                         if (itemCarrinho) {
                             itemCarrinho.quantidade++;
                         } else {
-                            this.carrinho.push({ nome: produto.nome, quantidade: 1 });
+                            this.carrinho.push({ nome: produto.nome, quantidade: 1, preco: produto.preco });
                         }
                     }
                 },
