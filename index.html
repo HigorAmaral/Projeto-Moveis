@@ -39,6 +39,9 @@
                 </ul>
                 <p v-if="carrinho.length === 0" class="text-muted mt-3">Sua sacola está vazia.</p>
                 <p v-if="carrinho.length > 0" class="mt-3 fw-bold">Total: R$ {{ totalCarrinho.toFixed(2) }}</p>
+                <div v-if="carrinho.length > 0" class="text-end mt-3">
+                    <button class="btn btn-success" @click="finalizarCompra">Finalizar Compra</button>
+                </div>
             </div>
         </div>
 
@@ -229,6 +232,10 @@
                 },
                 alterarImagem(index, novaImagem) {
                     this.produtos[index].imagemAtual = novaImagem;
+                },
+                finalizarCompra() {
+                    localStorage.setItem('carrinho', JSON.stringify(this.carrinho)); 
+                    window.location.href = 'carrinho.html'; 
                 }
             }
         });

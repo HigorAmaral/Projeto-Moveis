@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue@3/dist/vue.global.js"></script>
+    <title>Carrinho de Compras</title>
+</head>
+<body>
+    <div id="app" class="container py-5">
+        <h1 class="text-center mb-4">Carrinho de Compras</h1>
+        <div v-if="carrinho.length > 0">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th>Produto</th>
+                        <th>Quantidade</th>
+                        <th>Preço Unitário</th>
+                        <th>Total</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr v-for="(item, index) in carrinho" :key="index">
+                        <td>{{ item.nome }}</td>
+                        <td>{{ item.quantidade }}</td>
+                        <td>R$ {{ item.preco.toFixed(2) }}</td>
+                        <td>R$ {{ (item.quantidade * item.preco).toFixed(2) }}</td>
+                        <td>
+                            <button class="btn btn-danger btn-sm" @click="removerDoCarrinho(index)">Remover</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            <div class="text-end">
+                <h4>Total Geral: R$ {{ totalCarrinho.toFixed(2) }}</h4>
+                <button class="btn btn-success mt-3" @click="finalizarCompra">Finalizar Compra</button>
+            </div>
+        </div>
+        <div v-else>
+            <p class="text-center text-muted">Seu carrinho está vazio.</p>
+            <div class="text-center">
+                <a href="index.html" class="btn btn-primary">Voltar para a Loja</a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const app = Vue.createApp({
+            data() {
+                return {
+                    carrinho: JSON.parse(localStorage.getItem('carrinho')) || [] 
+                };
+            },
+            computed: {
+                totalCarrinho() {
+                    return this.carrinho.reduce((total, item) => total + (item.quantidade * item.preco), 0);
+                }
+            },
+            methods: {
+                removerDoCarrinho(index) {
+                    this.carrinho.splice(index, 1);
+                    this.atualizarCarrinho();
+                },
+                atualizarCarrinho() {
+                    localStorage.setItem('carrinho', JSON.stringify(this.carrinho));
+                },
+                finalizarCompra() {
+                    alert('Compra finalizada com sucesso!');
+                    this.carrinho = [];
+                    this.atualizarCarrinho();
+                }
+            }
+        });
+
+        app.mount('#app');
+    </script>
+</body>
+</html>
