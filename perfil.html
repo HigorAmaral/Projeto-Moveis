@@ -23,20 +23,6 @@
         </div>
     </div>
 
-    <script>
-        const app = Vue.createApp({
-            data() {
-                return {
-                    usuario: JSON.parse(localStorage.getItem('usuario')) || { 
-                        nome: 'Usuário', 
-                        email: 'exemplo@email.com', 
-                        dataCadastro: 'N/A' 
-                    }
-                };
-            }
-        });
-
-        app.mount('#app');
-    </script>
+    <script src="script/perfil.js"></script>
 </body>
 </html>
