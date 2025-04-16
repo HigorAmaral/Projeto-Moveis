@@ -9,108 +9,108 @@ const app = Vue.createApp({
                     descricao: 'O famoso cão detetive que adora biscoitos Scooby.', 
                     preco: 49.90,
                     estoque: 10, 
-                    imagemPadrao: 'imagens/scob-1.png',
-                    imagemHover: 'imagens/scob-2.png',
-                    imagemAtual: 'imagens/scob-2.png'
+                    imagemPadrao: 'assets/imagens/scob-1.png',
+                    imagemHover: 'assets/imagens/scob-2.png',
+                    imagemAtual: 'assets/imagens/scob-2.png'
                 },
                 { 
                     nome: 'Salsicha', 
                     descricao: 'O melhor amigo de Scooby, sempre com fome e medroso.', 
                     preco: 59.90,
                     estoque: 10, 
-                    imagemPadrao: 'imagens/sal-1.png',
-                    imagemHover: 'imagens/sal-2.png',
-                    imagemAtual: 'imagens/sal-2.png'
+                    imagemPadrao: 'assets/imagens/sal-1.png',
+                    imagemHover: 'assets/imagens/sal-2.png',
+                    imagemAtual: 'assets/imagens/sal-2.png'
                 },
                 { 
                     nome: 'Fred', 
                     descricao: 'O líder da turma, conhecido por suas armadilhas engenhosas.', 
                     preco: 69.90,
                     estoque: 10, 
-                    imagemPadrao: 'imagens/fred-1.jpg',
-                    imagemHover: 'imagens/fred-2.jpg',
-                    imagemAtual: 'imagens/fred-2.jpg'
+                    imagemPadrao: 'assets/imagens/fred-1.jpg',
+                    imagemHover: 'assets/imagens/fred-2.jpg',
+                    imagemAtual: 'assets/imagens/fred-2.jpg'
                 },
                 { 
                     nome: 'Velma', 
                     descricao: 'A mente brilhante da equipe, sempre resolvendo mistérios.', 
                     preco: 79.90,
                     estoque: 10, 
-                    imagemPadrao: 'imagens/velma-1.jpg',
-                    imagemHover: 'imagens/velma-2.jpg',
-                    imagemAtual: 'imagens/velma-2.jpg'
+                    imagemPadrao: 'assets/imagens/velma-1.jpg',
+                    imagemHover: 'assets/imagens/velma-2.jpg',
+                    imagemAtual: 'assets/imagens/velma-2.jpg'
                 },
                 { 
                     nome: 'Daphne', 
                     descricao: 'A elegante e corajosa integrante da equipe Mistério S/A.', 
                     preco: 69.90,
                     estoque: 10, 
-                    imagemPadrao: 'imagens/daph-1.jpg',
-                    imagemHover: 'imagens/daph-2.jpg',
-                    imagemAtual: 'imagens/daph-2.jpg'
+                    imagemPadrao: 'assets/imagens/daph-1.jpg',
+                    imagemHover: 'assets/imagens/daph-2.jpg',
+                    imagemAtual: 'assets/imagens/daph-2.jpg'
                 },
                 { 
                     nome: 'Scrappy-Doo', 
                     descricao: 'O pequeno e corajoso sobrinho de Scooby-Doo.', 
                     preco: 39.90,
                     estoque: 8, 
-                    imagemPadrao: 'imagens/scro-1.jpg',
-                    imagemHover: 'imagens/scro-2.jpg',
-                    imagemAtual: 'imagens/scro-2.jpg'
+                    imagemPadrao: 'assets/imagens/scro-1.jpg',
+                    imagemHover: 'assets/imagens/scro-2.jpg',
+                    imagemAtual: 'assets/imagens/scro-2.jpg'
                 },
                 { 
                     nome: 'Scooby-Loo', 
                     descricao: 'Outro membro da família de Scooby, sempre animado.', 
                     preco: 44.90,
                     estoque: 7, 
-                    imagemPadrao: 'imagens/loo-1.jpg',
-                    imagemHover: 'imagens/loo-2.jpg',
-                    imagemAtual: 'imagens/loo-2.jpg'
+                    imagemPadrao: 'assets/imagens/loo-1.jpg',
+                    imagemHover: 'assets/imagens/loo-2.jpg',
+                    imagemAtual: 'assets/imagens/loo-2.jpg'
                 },
                 { 
                     nome: 'Professor Pericles', 
                     descricao: 'O papagaio gênio e vilão recorrente.', 
                     preco: 89.90,
                     estoque: 5, 
-                    imagemPadrao: 'imagens/prof-1.jpg',
-                    imagemHover: 'imagens/prof-2.jpg',
-                    imagemAtual: 'imagens/prof-2.jpg'
+                    imagemPadrao: 'assets/imagens/prof-1.jpg',
+                    imagemHover: 'assets/imagens/prof-2.jpg',
+                    imagemAtual: 'assets/imagens/prof-2.jpg'
                 },
                 { 
                     nome: 'Hex Girls', 
                     descricao: 'A banda de rock gótica que ajuda a turma em mistérios.', 
                     preco: 99.90,
                     estoque: 6, 
-                    imagemPadrao: 'imagens/hock-1.jpg',
-                    imagemHover: 'imagens/hock-2.jpg',
-                    imagemAtual: 'imagens/hock-2.jpg'
+                    imagemPadrao: 'assets/imagens/hock-1.jpg',
+                    imagemHover: 'assets/imagens/hock-2.jpg',
+                    imagemAtual: 'assets/imagens/hock-2.jpg'
                 },
                 { 
                     nome: 'Capitão Caverna', 
                     descricao: 'Um personagem clássico que aparece em crossovers.', 
                     preco: 74.90,
                     estoque: 4, 
-                    imagemPadrao: 'imagens/capitao-1.jpg',
-                    imagemHover: 'imagens/capitao-2.jpg',
-                    imagemAtual: 'imagens/capitao-1.jpg'
+                    imagemPadrao: 'assets/imagens/capitao-1.jpg',
+                    imagemHover: 'assets/imagens/capitao-2.jpg',
+                    imagemAtual: 'assets/imagens/capitao-1.jpg'
                 },
                 { 
                     nome: 'Fantasma do Palhaço', 
                     descricao: 'Um dos vilões mais assustadores enfrentados pela turma.', 
                     preco: 84.90,
                     estoque: 3, 
-                    imagemPadrao: 'imagens/palhaco-1.jpg',
-                    imagemHover: 'imagens/palhaco-2.jpg',
-                    imagemAtual: 'imagens/palhaco-1.jpg'
+                    imagemPadrao: 'assets/imagens/palhaco-1.jpg',
+                    imagemHover: 'assets/imagens/palhaco-2.jpg',
+                    imagemAtual: 'assets/imagens/palhaco-1.jpg'
                 },
                 { 
                     nome: 'Charlie, o Robô', 
                     descricao: 'Um robô que causou confusão em um dos mistérios.', 
                     preco: 64.90,
                     estoque: 6, 
-                    imagemPadrao: 'imagens/charlie-1.jpg',
-                    imagemHover: 'imagens/charlie-2.jpg',
-                    imagemAtual: 'imagens/charlie-1.jpg'
+                    imagemPadrao: 'assets/imagens/charlie-1.jpg',
+                    imagemHover: 'assets/imagens/charlie-2.jpg',
+                    imagemAtual: 'assets/imagens/charlie-1.jpg'
                 }
             ]
         };
