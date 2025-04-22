@@ -18,9 +18,19 @@ const app = Vue.createApp({
             localStorage.setItem('carrinho', JSON.stringify(this.carrinho));
         },
         finalizarCompra() {
-            alert('Compra finalizada com sucesso!');
-            this.carrinho = [];
-            this.atualizarCarrinho();
+            if (confirm('Tem certeza de que deseja finalizar a compra?')) {
+                alert('Compra finalizada com sucesso!');
+                this.carrinho = []; 
+            }
+        },
+        aplicarDesconto() {
+            const cupom = document.getElementById('cupom').value;
+            if (cupom === 'DESCONTO10') {
+                this.totalCarrinho *= 0.9; 
+                alert('Cupom aplicado com sucesso!');
+            } else {
+                alert('Cupom inválido.');
+            }
         }
     }
 });
