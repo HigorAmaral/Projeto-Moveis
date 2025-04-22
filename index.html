@@ -13,20 +13,29 @@
 <body>
     <div id="app">
         <!-- Navbar -->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <nav class="navbar navbar-expand-lg" style="background-color: #ffcc00;">
             <div class="container">
-                <a class="navbar-brand" href="#">Loja de Brinquedos</a>
+                <a class="navbar-brand fw-bold" href="#" style="color: #ff5733;">
+                    <img src="assets/imagens/logo-brinquedos.png" alt="Logo" width="40" class="d-inline-block align-text-top">
+                    Loja de Brinquedos
+                </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     <ul class="navbar-nav ms-auto">
                         <li class="nav-item">
-                            <a href="perfil.html" class="nav-link">Perfil</a>
+                            <a class="nav-link fw-bold" href="#produtos" style="color: #ff5733;">Produtos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="#sobre" style="color: #ff5733;">Sobre Nós</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link fw-bold" href="contato.html" style="color: #ff5733;">Contato</a>
                         </li>
                         <li class="nav-item">
                             <button class="btn btn-light" @click="mostrarCarrinho = !mostrarCarrinho">
-                                Sacola ({{ carrinho.length }})
+                                🛒 Sacola ({{ carrinho.length }})
                             </button>
                         </li>
                     </ul>
