@@ -1,12 +1,16 @@
 const app = Vue.createApp({
     data() {
         return {
-            carrinho: JSON.parse(localStorage.getItem('carrinho')) || [] 
+            carrinho: JSON.parse(localStorage.getItem('carrinho')) || [],
+            desconto: 0 // Armazena o valor do desconto aplicado
         };
     },
     computed: {
         totalCarrinho() {
             return this.carrinho.reduce((total, item) => total + (item.quantidade * item.preco), 0);
+        },
+        totalComDesconto() {
+            return this.totalCarrinho - this.desconto; // Aplica o desconto ao total
         }
     },
     methods: {
@@ -20,16 +24,19 @@ const app = Vue.createApp({
         finalizarCompra() {
             if (confirm('Tem certeza de que deseja finalizar a compra?')) {
                 alert('Compra finalizada com sucesso!');
-                this.carrinho = []; 
+                this.carrinho = [];
+                this.desconto = 0; // Reseta o desconto após finalizar a compra
+                this.atualizarCarrinho();
             }
         },
         aplicarDesconto() {
             const cupom = document.getElementById('cupom').value;
             if (cupom === 'DESCONTO10') {
-                this.totalCarrinho *= 0.9; 
-                alert('Cupom aplicado com sucesso!');
+                this.desconto = this.totalCarrinho * 0.1; // Aplica 10% de desconto
+                alert('Cupom aplicado com sucesso! Você recebeu 10% de desconto.');
             } else {
                 alert('Cupom inválido.');
+                this.desconto = 0; // Garante que o desconto seja zerado se o cupom for inválido
             }
         }
     }

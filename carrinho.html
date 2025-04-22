@@ -48,6 +48,8 @@
                     <input type="text" id="cupom" class="form-control" placeholder="Digite o código do cupom">
                     <button class="btn btn-outline-secondary" @click="aplicarDesconto">Aplicar</button>
                 </div>
+                <p v-if="desconto > 0" class="text-success mt-2">Desconto aplicado: R$ {{ desconto.toFixed(2) }}</p>
+                <p class="fw-bold mt-2">Total com desconto: R$ {{ totalComDesconto.toFixed(2) }}</p>
             </div>
         </div>
         <div v-else>
