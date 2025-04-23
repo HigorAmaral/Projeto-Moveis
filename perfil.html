@@ -16,9 +16,41 @@
                 <h3 class="card-title text-center">Bem-vindo, {{ usuario.nome }}</h3>
                 <p><strong>E-mail:</strong> {{ usuario.email }}</p>
                 <p><strong>Data de Cadastro:</strong> {{ usuario.dataCadastro }}</p>
+                <p><strong>Endereço:</strong> {{ usuario.endereco }}</p>
+                <p><strong>Cidade:</strong> {{ usuario.cidade }}</p>
+                <p><strong>Estado:</strong> {{ usuario.estado }}</p>
+                <p><strong>CEP:</strong> {{ usuario.cep }}</p>
                 <div class="text-center mt-4">
-                    <a href="index.html" class="btn btn-primary">Voltar para a Loja</a>
+                    <button class="btn btn-warning" @click="editarEndereco = true">Editar Endereço</button>
                 </div>
+            </div>
+        </div>
+
+        <div v-if="editarEndereco" class="card mx-auto mt-4" style="max-width: 400px;">
+            <div class="card-body">
+                <h3 class="card-title text-center">Editar Endereço</h3>
+                <form @submit.prevent="salvarEndereco">
+                    <div class="mb-3">
+                        <label for="endereco" class="form-label">Endereço</label>
+                        <input type="text" id="endereco" v-model="usuario.endereco" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cidade" class="form-label">Cidade</label>
+                        <input type="text" id="cidade" v-model="usuario.cidade" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="estado" class="form-label">Estado</label>
+                        <input type="text" id="estado" v-model="usuario.estado" class="form-control" required>
+                    </div>
+                    <div class="mb-3">
+                        <label for="cep" class="form-label">CEP</label>
+                        <input type="text" id="cep" v-model="usuario.cep" class="form-control" required>
+                    </div>
+                    <div class="text-center">
+                        <button type="submit" class="btn btn-success">Salvar</button>
+                        <button type="button" class="btn btn-secondary" @click="editarEndereco = false">Cancelar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
