@@ -8,36 +8,37 @@
     <link rel="shortcut icon" href="assets/imagens/icon.png" type="image/x-icon" />
     <link rel="stylesheet" href="assets/style/carrinho.css" />
     <title>Carrinho de Compras</title>
-    
 </head>
 <body>
     <div id="app" class="container py-5">
         <h1 class="text-center mb-4">Carrinho de Compras</h1>
         <div v-if="carrinho.length > 0">
-            <table class="table table-bordered">
-                <thead>
-                    <tr>
-                        <th>Imagem</th>
-                        <th>Produto</th>
-                        <th>Quantidade</th>
-                        <th>Preço Unitário</th>
-                        <th>Total</th>
-                        <th>Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr v-for="(item, index) in carrinho" :key="index">
-                        <td><img :src="item.imagem" alt="Imagem do Produto" class="img-thumbnail" style="width: 50px;"></td>
-                        <td>{{ item.nome }}</td>
-                        <td>{{ item.quantidade }}</td>
-                        <td>R$ {{ item.preco.toFixed(2) }}</td>
-                        <td>R$ {{ (item.quantidade * item.preco).toFixed(2) }}</td>
-                        <td>
-                            <button class="btn btn-danger btn-sm" @click="removerDoCarrinho(index)">Remover</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
+            <div class="table-responsive">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Imagem</th>
+                            <th>Produto</th>
+                            <th>Quantidade</th>
+                            <th>Preço Unitário</th>
+                            <th>Total</th>
+                            <th>Ações</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="(item, index) in carrinho" :key="index">
+                            <td><img :src="item.imagem" alt="Imagem do Produto" class="img-thumbnail" style="width: 50px;"></td>
+                            <td>{{ item.nome }}</td>
+                            <td>{{ item.quantidade }}</td>
+                            <td>R$ {{ item.preco.toFixed(2) }}</td>
+                            <td>R$ {{ (item.quantidade * item.preco).toFixed(2) }}</td>
+                            <td>
+                                <button class="btn btn-danger btn-sm" @click="removerDoCarrinho(index)">Remover</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
             <div class="text-end">
                 <h4>Total Geral: R$ {{ totalCarrinho.toFixed(2) }}</h4>
                 <button class="btn btn-success mt-3" @click="finalizarCompra">Finalizar Compra</button>
