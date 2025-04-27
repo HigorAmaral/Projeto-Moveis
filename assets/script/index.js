@@ -86,31 +86,31 @@ const app = Vue.createApp({
                     imagemAtual: 'assets/imagens/hock-2.jpg'
                 },
                 { 
-                    nome: 'Capitão Caverna', 
-                    descricao: 'Um personagem clássico que aparece em crossovers.', 
+                    nome: 'Monstro de Piche', 
+                    descricao: 'Uma criatura assustadora coberta de piche.', 
                     preco: 74.90,
                     estoque: 4, 
-                    imagemPadrao: 'assets/imagens/capitao-1.jpg',
-                    imagemHover: 'assets/imagens/capitao-2.jpg',
-                    imagemAtual: 'assets/imagens/capitao-1.jpg'
+                    imagemPadrao: 'assets/imagens/piche1.jpg',
+                    imagemHover: 'assets/imagens/piche2.jpg',
+                    imagemAtual: 'assets/imagens/piche2.jpg'
                 },
                 { 
-                    nome: 'Fantasma do Palhaço', 
-                    descricao: 'Um dos vilões mais assustadores enfrentados pela turma.', 
+                    nome: 'Cavaleiro Sem Cabeça', 
+                    descricao: 'Um vilão clássico que assombra a turma.', 
                     preco: 84.90,
                     estoque: 3, 
-                    imagemPadrao: 'assets/imagens/palhaco-1.jpg',
-                    imagemHover: 'assets/imagens/palhaco-2.jpg',
-                    imagemAtual: 'assets/imagens/palhaco-1.jpg'
+                    imagemPadrao: 'assets/imagens/cava1.png',
+                    imagemHover: 'assets/imagens/cava2.png',
+                    imagemAtual: 'assets/imagens/cava2.png'
                 },
                 { 
-                    nome: 'Charlie, o Robô', 
-                    descricao: 'Um robô que causou confusão em um dos mistérios.', 
-                    preco: 64.90,
-                    estoque: 6, 
-                    imagemPadrao: 'assets/imagens/charlie-1.jpg',
-                    imagemHover: 'assets/imagens/charlie-2.jpg',
-                    imagemAtual: 'assets/imagens/charlie-1.jpg'
+                    nome: 'Creeper', 
+                    descricao: 'O Creeper é um vilão clássico do Scooby-Doo', 
+                    preco: 74.90,
+                    estoque: 4, 
+                    imagemPadrao: 'assets/imagens/crep1.jpg',
+                    imagemHover: 'assets/imagens/crep2.jpg',
+                    imagemAtual: 'assets/imagens/crep1.jpg'
                 }
             ]
         };
